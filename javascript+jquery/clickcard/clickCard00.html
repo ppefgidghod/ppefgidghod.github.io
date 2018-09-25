@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div class="bigbox">
+<div class="click-Card">
+	<span>first</span>
+	<span>second</span>
+	<span>thrid</span>
+</div>
+<div class="content-card">
+	<span>first box</span>
+	<span>second box</span>
+	<span>thrid box</span>
+</div>
+</div>
+<style type="text/css">
+#bigbox {
+	width: 600px;
+	height: 400px;
+	/*background: bisque;*/
+}
+.click-Card {
+	width: 100%;
+	height: 50px;
+	position: relative;
+	font-size: 0;
+}
+.click-Card span {
+	width: 33%;
+	height: 100%;
+	display: inline-block;
+	background: gold;
+	border: 1px solid #669999;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+}
+.content-card {
+	width: 100%;
+	height: 350px;
+	position: relative;
+	font-size: 0;
+	
+}
+.content-card span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 30px;
+	text-align: center;
+	line-height: 200px;
+	display: none;
+	background: #6699CC;
+}
+.content-card span.active {
+	display: block;
+}
+</style>
+<script type="text/javascript">
+var clickCards = document.querySelectorAll('.bigbox .click-Card span');
+var contentCards = document.querySelectorAll('.bigbox .content-card span');
+
+var addClass = function(element,className) {
+	var oldClass = element.className;
+	var classArray = oldClass.split(' ');
+if(classArray.indexOf(className) ===  -1 ){
+	classArray.push(className);
+}
+element.className = classArray.join(' ').trim();
+}
+
+var removeClass = function(element,className) {
+	var oldClass = element.className;
+	var classArray = oldClass.split(' ');
+if(classArray.indexOf(className) !==  -1 ){
+	classArray.splice(classArray.indexOf(className), 1);
+}
+if(classArray.indexOf(className) ===  0) {
+	element.removeAttribute('class');
+}else {
+	element.className = classArray.join(' ').trim();
+	}
+}
+
+    var siblings = function (ele) {
+        var nodes = [];
+        var allNodes = ele.parentNode.children;
+        for (var i = 0; i < allNodes.length; i++) {
+            if (allNodes[i] !== ele) {
+                nodes.push(allNodes[i]);
+            }
+        }
+        return nodes;
+    }
+    
+//  clickCards颜色重置
+	var clickCardsInt = function() {
+		for (var i = 0;i < clickCards.length;i++){
+			clickCards[i].style.background = 'gold';
+		}
+	}
+	
+	
+  for (var i = 0; i < clickCards.length; i++) {
+    clickCards[i].index = i;
+
+    clickCards[i].onclick = function () {
+	
+	clickCardsInt();
+	this.style.background = '#6699CC';
+	
+	addClass(this,'active');
+	var otherclickCards = siblings(this);
+	for (var j = 0; j < otherclickCards.length; j++) {
+                removeClass(otherclickCards[j], 'active');
+            }
+	addClass(contentCards[this.index],'active');
+	
+	 var othercontentCards = siblings(contentCards[this.index]);
+            for (var h = 0; h < othercontentCards.length; h++) {
+                removeClass(othercontentCards[h], 'active');
+            }
+}
+}
+  
+
+</script>
+			
+	</body>
+</html>

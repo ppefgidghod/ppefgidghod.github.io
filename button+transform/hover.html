@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/hover.css/2.3.1/css/hover.css"/>
+	</head>
+	<body>
+		
+		<!--<div class="hvr-grow">H5H5H5H5</div>-->
+		<!--<a href="" class="hvr-pulse-grow">H5H5H5H5</a>-->
+		<a href="" class="hvr-wobble-skew0">H5H5H5</a>
+		<style type="text/css">
+			.hvr-wobble-skew0 {
+				background: pink;
+				padding: 15px 10px;
+				display: inline-block;
+				text-decoration: none;
+				/*animation: skew0 .5s linear;*/
+				transform-origin: 0 100% 0;
+				
+				/*transition: all 1s cubic-bezier(0.24, -2.42, 0.68, 3.2) 0s;*/
+			}
+			.hvr-wobble-skew0:hover {
+				/*transform: skew(30deg);*/
+				animation: skew0 1s ease-in-out ;
+				/*animation-play-state: running;*/
+			}
+			@keyframes skew0 {
+				0%{transform: skew(0deg);}
+				16.66%{transform: skew(-12deg);}
+				33.33%{transform: skew(10deg);}
+				50%{transform: skew(-6deg);}
+				66.66%{transform: skew(4deg);}
+				83.25%{transform: skew(-2deg);}
+				100%{transform: skew(0deg);}
+
+			}
+		</style>
+		
+		<a href="" class="hvr-buzz0">H5H5H5H5</a>
+		<style type="text/css">
+			.hvr-buzz0 {
+				background: pink;
+				padding: 15px 10px;
+				display: inline-block;
+				text-decoration: none;
+
+				transform-origin: center 500% 0;
+			}
+			.hvr-buzz0:hover {
+				animation: buzz0 1s ease-in-out infinite;
+				
+			}
+			@keyframes buzz0{
+				0% {transform: rotate(0deg);}
+				16% {transform: rotate(-1deg);}
+				32% {transform: rotate(0.8deg);}
+				50% {transform: rotate(-0.6deg);}
+				66% {transform: rotate(0.4deg);}
+				74% {transform: rotate(-0.2deg);}
+				100% {transform: rotate(0deg);}
+				
+			}
+			
+		</style>
+		
+		<!--<a href="" class="hvr-back-pulse0">H5H5H5</a>
+		<style type="text/css">
+			.hvr-back-pulse0 {
+				background: pink;
+				padding: 15px 10px;
+				display: inline-block;
+				position: relative;
+				z-index: 1;
+				overflow: hidden;
+				text-decoration: none;
+			}
+			.hvr-back-pulse0:before {
+				content: '';
+				width: 100%;
+				height: 100%;
+				display: block;
+				background: pink;
+				position: absolute;
+				/*right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: 0 auto;*/
+				margin: -15px -10px;
+				z-index: -1;
+				transition: all 1s;
+				transform: scale(2);
+				/*transform-origin: 100% 0 0;*/
+				border-radius: 50%;
+			}
+			.hvr-back-pulse0:hover:before {
+				/*width: 100%;*/
+				transform: scale(0);
+			}
+		</style>-->
+		<hr />
+		<div class="jump"></div>
+		<style type="text/css">
+			.jump {
+				width: 76.5px;
+				height: 81px;
+				background: lightblue url(img/sprites-IORI.jpg) ;
+				
+				animation-name: jump;
+				animation-duration: 3s;
+				animation-timing-function: steps(26,start);
+				animation-iteration-count: infinite;
+			}
+			@keyframes jump {
+				0% {background-position-x: 0;}
+				100% {background-position-x: 100%;}
+			}
+		</style>
+		
+		<div class="run"></div>
+		<style type="text/css">
+			.run {
+				width: 180px;
+				height: 300px;
+				background: lightblue url(img/sprites.png);
+				animation-name: run;
+				animation-duration: 1s;
+				animation-timing-function: steps(7,start);
+				animation-iteration-count: infinite;
+				
+			}
+			@keyframes run {
+				0% {background-position-x: 180px;}
+				100% {background-position-x: 100%;}
+			}
+		</style>
+		<hr />
+		<div class="embz"></div>
+		<style type="text/css">
+			.embz{
+				width: 200px;
+				height: 316px;
+				background: black url(img/walkingdead.png);
+				animation-name: embz;
+				animation-duration: 5s;
+				animation-timing-function: steps(10,start);
+				animation-iteration-count: infinite;
+				
+			}
+			@keyframes embz {
+				0% {background-position-x: 200px;}
+				100% {background-position-x: 100%;}
+			}
+		</style>
+		<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js" ></script>
+	</body>
+</html>

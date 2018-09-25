@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="stage">
+			<div id="slide">
+				<img class="active" src="../../images/1.jpg" />
+				<img class="active" src="../../images/2.jpg" />
+				<img class="active" src="../../images/3.jpg" />
+				<img class="active" src="../../images/4.jpg" />
+			</div>
+			<div class="button">
+				<span id="prev"></span>
+				<span id="next"></span>
+			</div>
+			<div id="cricle"></div>
+		</div>
+		<style type="text/css">
+			#stage {
+				width: 400px;
+				height: 250px;
+				position: relative;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				overflow: hidden;
+				border-radius: 30px;
+				border: 5px solid gray;
+			}
+			
+			#slide {
+				width: 1600px;
+				height: 250px;
+				font-size: 0;
+				transition: all 5s;
+			}
+			
+			img {
+				width: 400px;
+				height: 250px;
+			}
+			
+			span {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: burlywood;
+				border-radius: 50%;
+			}
+			
+			span:first-of-type {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
+				background: url(../../images/left-circle.png) no-repeat;
+				background-size: cover;
+			}
+			
+			span:last-of-type {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				background: url(../../images/right-circle.png) no-repeat;
+				background-size: cover;
+			}
+			
+			#cricle {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				text-align: center;
+			}
+			
+			em {
+				width: 10px;
+				height: 10px;
+				background: white;
+				display: inline-block;
+				border-radius: 50%;
+				margin: 5px;
+			}
+			
+			em:first-of-type {
+				background: cadetblue;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var stage = document.getElementById('stage');
+			var prev = document.getElementById("prev");
+			var next = document.getElementById("next");
+			//	var imgs = document.getElementsByTagName('img');
+			var imgs = document.querySelectorAll('#slide img');
+			var slide = document.getElementById('slide');
+			var current = 0;
+			var cricle = document.getElementById("cricle");
+
+			for(var i = 0; i < imgs.length; i++) {
+				var iNode = document.createElement('em');
+				iNode.index = i;
+				cricle.appendChild(iNode);
+			}
+
+			//	图片排序
+			var intImgsNext = function() {
+
+			}
+			var intImgsPrev = function() {
+
+			}
+
+			var intItems = function() {
+				for(var i = 0; i < items.length; i++) {
+					items[i].style.background = 'white';
+					items[i].style.transition = 'all 0s'
+				}
+			}
+
+			var prevClick = function() {
+				current--;
+				if(current < 0) {
+					current = imgs.length - 1;
+				}
+
+				slide.style.transition = "all 1s";
+				slide.style.marginLeft = -400 * current + 'px';
+
+				intItems();
+				
+				items[current].style.background = 'cadetblue';
+				
+				if(current === 0){
+					slide.style.transition = 'all 0s';
+					slide.style.marginLeft = -1200 +'px';
+					items[current].style.transition = 'all 0s';
+//					slide.insertBefore(slide.childNodes[0],slide.childNodes[1],slide.childNodes[2]);
+				}
+			}
+
+			var nextClick = function() {
+				current++;
+				if(current > imgs.length - 1) {
+					current = 0;
+				}
+
+				slide.style.transition = "all 1s";
+				slide.style.marginLeft = -400 * current + 'px';
+				intItems();
+				
+				items[current].style.background = 'cadetblue';
+			}
+
+			prev.onclick = function() {
+				prevClick();
+//			slide.insertBefore(slide.lastElementChild, slide.firstElementChild);
+			}
+			next.onclick = function() {
+				nextClick();
+//				setTimeout(function() {
+//					slide.style.transition = 'all 0s';
+//					slide.style.marginLeft = '0';
+//					items[current].style.transition = 'all 0s';
+//					slide.appendChild(slide.firstElementChild);
+//				}, 2000)
+			}
+
+			var items = document.getElementsByTagName('em');
+			for(var j = 0; j < items.length; j++) {
+				items[j].onclick = function() {
+					//					console.log(this.index); 
+					slide.style.marginLeft = -400 * this.index + 'px';
+					intItems();
+					this.style.background = 'cadetblue';
+				}
+			}
+
+
+			var id = setInterval(function() {
+				nextClick();
+			}, 3000)
+
+			stage.onmouseover = function() {
+				clearInterval(id);
+			}
+			stage.onmouseout = function() {
+				id = setInterval(function() {
+					nextClick();
+				}, 3000)
+			}
+			
+		</script>
+	</body>
+
+</html>

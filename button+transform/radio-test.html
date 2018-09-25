@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+				<label class="switch">
+		  <input type="radio" name="profession">
+		  <div class="slider">前端工程师</div>
+		</label>
+		<label class="switch">
+		  <input type="radio" name="profession">
+		  <div class="slider">视觉设计师</div>
+		</label>
+		
+		<hr />
+		<label class="switch">
+		  <input type="checkbox">
+		  <div class="slider">SVG</div>
+		</label>
+		<label class="switch">
+		  <input type="checkbox">
+		  <div class="slider">HTML5</div>
+		</label>
+		<label class="switch">
+		  <input type="checkbox">
+		  <div class="slider">JAVA</div>
+		</label>
+		
+		<style type="text/css">
+			.switch {
+				/*width: 150px;*/
+				display: inline-block;
+			}
+			.switch input {
+				display: none;
+			}
+			.switch .slider {
+				background: #EAEAEA;
+				line-height: 36px;
+				border-radius: 3px;
+				font-size: 12px;
+				padding: 0 20px 0 10px;
+			}
+			.switch .slider:before {
+				content: '';
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				background: url(img/input-checked.png) no-repeat;
+				vertical-align: middle;
+				margin-right: 5px;
+				margin-top: -2px;
+			}
+			.switch input:checked + .slider {
+				background: pink;
+			}
+			.switch input:checked + .slider:before {
+				background: url(../img/input-checked.png);
+			}
+		</style>
+
+		<hr><hr>
+		<label class="a1"><input type="button">button-scale</label>
+		<label class="a2"><input type="button">Wobble</label>
+		<label class="a3"><input type="button">Skew</label>
+		<label class="a4"><input type="button">icon</label>
+		<label class="a5"><input type="button">border</label>
+		<style>
+			body {
+				transform-style: preserve-3d;
+			}
+			.a1 {
+				display: inline-block;
+				width: 100px;
+				line-height: 50px;
+				margin-left: 30px; 
+				background: gainsboro;
+				text-align: center;
+			}
+			input {
+				display: none;
+			}
+			.a1:hover {
+				transform: scale(2,2);
+			}
+			.a2 {
+				display: inline-block;
+				width: 100px;
+				line-height: 50px;
+				margin-left: 30px; 
+				background: gainsboro;
+				text-align: center;
+				transform: perspective(1px) translateZ(0);
+			}
+			.a2:hover {
+				transform: translate(5px,-3px);
+			}
+			.a3 {
+				display: inline-block;
+				width: 100px;
+				line-height: 50px;
+				margin-left: 30px; 
+				background: gainsboro;
+				text-align: center;
+			}
+			.a3:hover {
+				animation: skew .5s ease-in-out;
+			}
+			@keyframes skew {
+				0%{transform: skewX(0deg);}
+				25%{transform: skewX(-20deg);}
+				50%{transform: skewX(0deg);}
+				75%{transform: skewX(20deg);}
+				100%{transform: skewX(0deg);}
+			}
+			.a4 {
+				display: inline-block;
+				width: 100px;
+				line-height: 50px;
+				margin-left: 30px; 
+				background: gainsboro;
+				text-align: center;
+			}
+			.a4::after{
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: url(img/loading.png) no-repeat;
+				background-size: cover;
+				margin-left: 5px;
+				vertical-align: middle;
+				transition: all 1s;
+			}
+			.a4:hover::after{
+				transform: rotateZ(180deg);
+			}
+			.a5 {
+				display: inline-block;
+				width: 100px;
+				line-height: 50px;
+				margin-left: 30px; 
+				background: gainsboro;
+				text-align: center;
+				position: relative;
+			}
+			.a5::before {
+				content: '';
+				display: inline-block;
+				height: 5px;
+				width: 0px;
+				background: rgb(106, 181, 206);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: width .5s ease-out;
+			}
+			.a5:hover::before {
+				width: 100px;
+			}
+
+		</style>
+
+	</body>
+</html>

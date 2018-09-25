@@ -1,0 +1,36 @@
+.bg {
+  width: 652px;
+  height: 602px;
+  margin: 0 auto;
+  position: relative;
+  background: url(../img/lottery-turntable-bg.jpg) no-repeat;
+}
+.bg #turntable {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 60px;
+  left: 117px;
+  background: url(../img/lottery-turntable.png) no-repeat;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+.bg #click {
+  width: 174px;
+  height: 228px;
+  position: absolute;
+  top: 159px;
+  left: 262px;
+  background: url(../img/lottery-pointer.png) no-repeat;
+}
+.bg #click label {
+  display: block;
+  width: 174px;
+  height: 174px;
+  position: absolute;
+  bottom: 0;
+}
+.bg #click label input {
+  display: none;
+}
+/*# sourceMappingURL=./turntable.css.map */

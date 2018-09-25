@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+}
+label.background {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+    background: linear-gradient(120deg, rgba(46, 134, 90, 0.473), rgba(0, 0, 100, 0));
+    perspective: 1500px;
+    justify-content: center;
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: " ";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(0deg, rgba(4, 4, 211, 0.479), rgba(0, 0, 200, 0));
+    }
+    input {
+        display: none;
+    }
+        .card {
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            // background:lightblue;            
+            margin: 80px auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            transform-style: preserve-3d;
+            transform-origin: 50% 50% 200px;
+            transition: all 0.3s;
+            border-radius: 20px;
+        .photo {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url(../img/600x600.jpg) no-repeat bottom center;
+            background-size: cover;
+            transform-style: preserve-3d;
+            border-radius: inherit;
+            transition: inherit;
+            z-index: -1;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: inherit;
+                transition: inherit;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transform: translateZ(-20px);
+                background:rgb(0, 0, 0);
+                border-radius: inherit;
+                transition: inherit;
+                // background: rebeccapurple;
+            }
+          }
+         .text {
+             color: aliceblue;
+             margin: 25px auto;
+            //  display: inline-block;
+            transition: transform .3s;
+         }
+      h2 {
+          .text;
+          padding-top: 20px;
+          margin: 50px auto 20px;
+      }
+      p {
+          .text;
+      }
+      .chart {
+        font-size: 0;
+        transform-style: preserve-3d;
+        margin-top: 40px;
+        .lay {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            transition: all .3s ease-in-out;
+        }
+        .bar1 {transition: all 0.003s * @span1;}
+        .bar2 {transition: all 0.003s * @span2;}
+        .bar3 {transition: all 0.003s * @span3;}
+        .bar4 {transition: all 0.003s * @span4;}
+        .bar5 {transition: all 0.003s * @span5;}
+        .bar6 {transition: all 0.003s * @span6;}
+        .bar7 {transition: all 0.003s * @span7;}
+          .bar {
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              background:rgb(250, 246, 246);
+              margin: 7px;
+              font-size: 12px;
+              transform: rotateZ(-45deg);
+              transform-style: preserve-3d;
+              &::before {
+                .lay;
+                content: " ";
+                // transform: translateZ(-1px);
+                transition: inherit;
+                background:rgb(250, 246, 246);
+            }
+              &::after {
+                .lay;
+                content: '';
+                transform-origin: 50% 0 0;
+                transform: translateY(20px) rotateX(90deg);
+                height: 0px;
+                transition: inherit;
+                background: #7CAAC1;
+            }
+              span {
+                .lay;
+                width: 0px;
+                display: block;
+                transform-origin: 0 50% 0;
+                transform: rotateY(-90deg) translateZ(0px);
+                transition: inherit;
+                font-size: 0;
+                text-align: end;
+                background: #CDD0D7;
+                padding-right: 10px;
+              }
+
+          }
+      }
+      h3 {
+          .text;
+      }
+    }
+   
+}
+@span1: 100;
+@span2: 130;
+@span3: 90;
+@span4: 120;
+@span5: 170;
+@span6: 80;
+@span7: 160;
+
+input:checked {
+    +.card {
+        transform: rotateX(60deg) rotateY(0deg) translateZ(100px);
+        .photo {
+        &::before {
+            background:rgba(0, 50, 100, 0.8);
+        }
+            }
+    h2 {
+        transform: translateY(50px) translateZ(-50px);
+        // opacity: 1;
+    }
+    p {
+        transform: translateY(50px) translateZ(-50px);
+        // opacity: 1;
+    }
+    h3 {
+        transform: translateY(50px);
+    }
+    .chart {
+        .bar1 {
+            &::after {height: @span1 * 1px+10px;}
+            &::before {transform: translateZ(@span1 * 1px+10px);
+                content: "M";
+            }
+            span { width: @span1 * 1px;
+                font-size: 12px;}
+        }
+        .bar2 {
+            &::after {height: @span2 * 1px+10px;}
+            &::before {transform: translateZ(@span2 * 1px+10px);
+                content: "T";}
+            span { width: @span2 * 1px;
+                font-size: 12px;}
+        }
+        .bar3 {
+            &::after {height: @span3 * 1px+10px;}
+            &::before {transform: translateZ(@span3 * 1px+10px);
+                content: "W";}
+            span { width: @span3 * 1px;
+                font-size: 12px;}
+        }
+        .bar4 {
+            &::after {height: @span4 * 1px+10px;}
+            &::before {transform: translateZ(@span4 * 1px+10px);
+                content: "T";}
+            span { width: @span4 * 1px;
+                font-size: 12px;}
+        }
+        .bar5 {
+            &::after {height: @span5 * 1px+10px;}
+            &::before {transform: translateZ(@span5 * 1px+10px);
+                content: "F";}
+            span { width: @span5 * 1px;
+                font-size: 12px;}
+        }
+        .bar6 {
+            &::after {height: @span6 * 1px+10px;}
+            &::before {transform: translateZ(@span6 * 1px+10px);
+                content: "S";}
+            span { width: @span6 * 1px;
+                font-size: 12px;}
+        }
+        .bar7 {
+            &::after {height: @span7 * 1px+10px;}
+            &::before {transform: translateZ(@span7 * 1px+10px);
+                content: "S";}
+            span { width: @span7 * 1px;
+                font-size: 12px;}
+        }
+    } 
+}
+
+}

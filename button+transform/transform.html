@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" />
+</head>
+<body>
+<div class="bigbox">
+    <div class="box top">top</div>
+    <div class="box front">front</div>
+    <div class="box back">back</div>
+    <div class="box right">right</div>
+    <div class="box left">left</div>
+    <div class="box bottom">bottom</div>
+</div>
+
+<style type="text/css">
+    .bigbox {
+        width: 100px;
+        height: 100px;
+        /*background: brown;*/
+        margin: 100px 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective:(200px);
+        transform: rotateX(-3deg) rotateY(3deg);
+        animation: rotate 2s infinite linear;
+        border-radius: 50px;
+
+
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        /*background: antiquewhite;*/
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: all .6s;
+        text-align: center;
+        line-height: 100px;
+        margin: 0 auto;
+        border-radius: 50px;
+
+    }
+    .top {
+        background: rgba(	255,0,0,.5);
+
+        transform: translateY(-70px) rotateX(90deg);
+    }
+    .front {
+        background: rgba(255,165,0,.5);
+        transform: translateZ(90px);
+    }
+    .back {
+        background: rgba(255,255,0,.5);
+        /*border-radius: 50px;*/
+        transform: translateZ(-90px);
+    }
+    .right {
+        background: rgba(0,255,0,.5);
+        transform: translateX(90px) rotateY(90deg);
+    }
+    .left {
+        background: rgba(152,251,152,.5);
+        transform: translateX(-90px) rotateY(-90deg);
+    }
+    .bottom {
+        background: rgba(0,0,255,.5);
+        /*border-radius: 50px;*/
+        transform: translateY(70px) rotateX(-90deg);
+    }
+    @keyframes rotate {
+        0% {transform: rotateY(3deg) rotateX(-3deg) }
+        50% {transform: rotateY(360deg) rotateX(-3deg) }
+        51% {transform: rotateX(3deg) rotateY(3deg) }
+        100% {transform: rotateX(360deg) rotateY(3deg)}
+    }
+</style>
+<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+</body>
+</html>

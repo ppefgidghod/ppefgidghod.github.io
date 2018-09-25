@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+				<div class="box">
+			<div class="ball"></div>
+		</div>
+		<style>
+		.box {
+			width: 600px;
+			height: 600px;
+			background: gray;
+			margin: -8px;
+			position: relative;
+		}
+		.ball {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background: burlywood;
+			border-radius: 50%;
+		}
+		</style>
+		<script type="text/javascript">
+//			var box = document.querySelector('.box');
+			var ball = document.querySelector('.ball');
+			var ballStyle = ball.currentStyle ? ball.currentStyle :window.getComputedStyle(ball,null);
+			var distanceX = parseInt(ballStyle.left);
+			var distanceY = parseInt(ballStyle.top);
+			var speed = 20;
+			
+			
+			var toRight = function() {
+				distanceX += speed;
+				ball.style.left = distanceX + 'px';
+			}
+			var toBottom = function() {
+				distanceY += speed;
+				ball.style.top = distanceY + 'px';
+			}
+			var toLeft = function() {
+				distanceX -= speed;
+				ball.style.left = distanceX + 'px';
+			}
+			var toTop = function() {
+				distanceY -= speed;
+				ball.style.top = distanceY + 'px';
+			}
+			var checkball = function (){
+				if(distanceX >= 550){
+					direction = 'left';
+				}
+				else if(distanceX === 0){
+					direction = 'right';
+				}
+				else if(distanceY === 0){
+					direction = 'down';
+				}
+				else if(distanceY >= 550){
+					direction = 'up';
+				}
+			}
+			var direction = 'right';
+			var id = setInterval(function(){
+				checkball();
+				if(direction === 'right'){
+					toRight();
+				}
+				else if(direction === 'down'){
+					toBottom();
+				}
+				else if(direction === 'left'){
+					toLeft();
+				}
+				else if(direction === 'up'){
+					toTop();
+				}
+			},100)
+			
+			document.body.onkeydown = function(ev) {
+				console.log(ev.keyCode);
+				switch(ev.keyCode) {
+					case 37:
+					direction = 'left';
+					break;
+					case 38:
+					direction = 'up';
+					break;
+					case 39:
+					direction = 'right';
+					break;
+					case 40:
+					direction = 'down';
+					break;
+				}
+			}
+		</script>
+	</body>
+</html>

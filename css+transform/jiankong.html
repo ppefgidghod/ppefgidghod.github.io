@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <button></button>
+        <span></span>
+    </div>
+    <h1></h1>
+    <style>
+    .box {
+        position: relative;
+        width: 300px;
+        height: 100px;
+        overflow: hidden;
+    }
+    button {
+        width: 100%;
+        height: 100%;
+        background: gold;
+        border: transparent;
+        /* margin: 50px 50px; */
+        position: absolute;
+    }
+    button+span {
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background: lightseagreen;
+        transform: scale(0);
+        transition: transform 5s;
+        
+    }
+    button.active+span{
+        transform: scale(10);
+    }
+    </style>
+
+    <script>
+    $('.box').hover(function(event){
+        $('.box>span').css({
+            'top':(event.clientY - $('button').offset().top - 50) + 'px',
+            'left':(event.clientX - $('button').offset().left - 50) + 'px'
+        })
+        $('button').addClass('active');
+    },function(){
+        $('button').removeClass('active');
+    })
+    </script>
+</body>
+</html>

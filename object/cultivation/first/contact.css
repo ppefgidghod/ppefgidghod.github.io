@@ -1,0 +1,349 @@
+ul, ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+header {
+	background: url(../cultivation/images/banner.jpg) no-repeat;
+	background-size: cover;
+	padding-top: 15px;
+	height: 718px;
+}
+
+nav.top {
+	background: rgba(0, 0, 0, 0.41);
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+nav.top ul {
+	float: left;
+}
+
+nav.top form {
+	float: right;
+	line-height: 54px;
+}
+
+nav.top ul li {
+	float: left;
+	line-height: 54px;
+	color: white;
+	padding-top: 4px;
+}
+
+nav.top ul li a {
+	margin: 0 15px;
+	color: white;
+	text-decoration: none;
+}
+
+nav.top ul li:after {
+	content: '/';
+}
+
+nav.top ul li:last-of-type a {
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+
+nav.top ul li a:hover {
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+
+nav.top form {
+	position: relative;
+}
+
+nav.top form input {
+	background: transparent;
+	border: 1px solid white;
+	outline: none;
+	color: white;
+	padding: 5px 10px;
+	margin-right: 20px;
+}
+
+nav.top form input[type=submit] {
+	background: url(../cultivation/images/search.png) no-repeat;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	border: none;
+	background-position: center;
+	margin-right: 0;
+	position: absolute;
+	right: 25px;
+	top: 16px;
+	cursor: pointer;
+}
+
+header .center {
+	text-align: center;
+	margin: 200px 0 0 0;
+}
+
+header .center h1 {
+
+border-top: 4px solid ghostwhite;
+border-bottom: 4px solid ghostwhite;
+padding-top: 10px;
+padding-bottom: 10px;
+font-size: 500%;
+font-weight: 10px;
+color: ghostwhite;
+display: inline;
+}
+
+section.contact .wrap {
+	overflow: hidden;
+	width: 1140px;
+	margin: 0 auto;
+	padding: 0 15px;
+	padding-bottom: 100px;
+}
+section.contact h3 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	
+}
+section.contact  .wrap .in {
+	width: 1140px;
+	/*display: flex;*/
+}
+section.contact  .wrap .in .txt {
+	width: 372px;
+	float: left;
+	margin-bottom: 30px;
+	padding: 0 4px;
+	/*justify-content: space-around;*/
+	
+		
+}
+section.contact  .wrap .in .txt1 {
+	margin-bottom: 30px;
+}
+section.contact  .wrap .in h5 {
+	margin-bottom: 3px;
+	font-size: 18px;
+	float: left;
+}
+section.contact  .wrap .in .txt input {
+	width: 350px;
+	height: 55px;
+}
+section.contact  .wrap .in .txt1 textarea {
+	width: 1106px;
+	height: 400px;
+	padding: 14px;
+} 
+
+section.contact  .wrap .in form input[type=submit] {
+	width: 146px;
+	height: 48px;
+	background: #16A667;
+	padding: 5px 20px;
+}
+section.contact  .wrap .in form input[type=submit]:hover {
+	cursor: pointer;
+	background:;
+}
+section.contact  .wrap .in input:hover{
+	border: 1px solid  #f2af00;
+}
+section.contact  .wrap .in input:hover:after {
+	border: 1px solid  #f2af00;
+}
+section.contact  .wrap .in textarea:hover{
+	border: 1px solid  #f2af00;
+}
+section.contact  .wrap .in textarea:hover:after {
+	border: 1px solid  #f2af00;
+}
+
+/*页脚分割*/
+section.message {
+	background: #3f454d;
+	overflow: hidden;
+}
+
+section.message .wrap {
+	overflow: hidden;
+	width: 1140px;
+	margin: 0 auto;
+	position: relative;
+	top: 40px;
+	/*bottom: 40px;*/
+}
+
+section.message .wrap .bigbox {
+	position: relative;
+	width: 360px;
+	/*height: 380px;*/
+	float: left;
+	padding-bottom: 30px;
+	/*overflow: hidden;*/
+}
+
+section.message .wrap .bigbox .box {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0;
+	/*height: 333px;*/
+	width: 350px;
+	/*overflow: hidden;*/
+	/*margin: 0 10px 0 0;*/
+}
+
+section.message .wrap .bigbox .box img {
+	width: 73.5px;
+	height: 73.5px;
+	float: left;
+	margin-right: 10px;
+	/*background-size: cover;*/
+}
+
+section.message .wrap .bigbox .box p.title4 {
+	color: white;
+}
+
+
+/*section.message .wrap .bigbox .box p.title4:after {
+	color: #999;
+}*/
+
+section.message .wrap .bigbox .box img:after p {
+	line-height: 20px;
+	font-size: 14px;
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+section.message .wrap .bigbox ul li {
+	background: url(img/list-arrow.png) no-repeat 2px 15px;
+	line-height: 24px;
+	font-size: 17px;
+	padding: 4px 6px;
+	margin: 5px 0;
+	cursor: pointer;
+	background-position: center left;
+	padding-left: 20px;
+}
+section.message .wrap .bigbox .inline .call {
+	float: left;
+	width: 47px;
+	height: 53px;
+	background: url(../cultivation/images/img-sprite1.png) no-repeat;
+	background-position-x: -217px;
+}
+section.message .wrap .bigbox .inline .address {
+	float: left;
+	width: 47px;
+	height: 53px;
+	background: url(../cultivation/images/img-sprite1.png) no-repeat;
+	background-position-x: -255px;
+}
+section.message .wrap .bigbox .inline .email {
+	float: left;
+	width: 47px;
+	height: 53px;
+	background: url(../cultivation/images/img-sprite1.png) no-repeat;
+	background-position-x: -297px;
+}
+section.message .wrap .bigbox .inline p {
+	color: #999;
+}
+
+section.footer {
+	background: gainsboro;
+	overflow: hidden;
+}
+
+section.footer .wrap {
+	overflow: hidden;
+	width: 1140px;
+	margin: 0 auto;
+	position: relative;
+	top: 50px;
+	/*bottom: 40px;*/
+}
+
+section.footer .wrap .icon {
+	height: 60px;
+	width: 300px;
+	/*background: palegoldenrod;*/
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around
+}
+
+section.footer .wrap .icon span i{
+	width: 55px;
+	height: 55px;
+	display: block;
+	background-image: url(../cultivation/images/img-sprite1.png);
+	ackground-repeat: no-repeat;
+	/*background-size: 100% auto;*/
+	flex-wrap: wrap;
+}
+
+.icon span:nth-of-type(1) i {
+	background-position-x: 0px;
+	cursor: pointer;
+}
+
+.icon span:nth-of-type(2) i {
+	background-position-x: -55px;
+	cursor: pointer;
+}
+
+.icon span:nth-of-type(3) i {
+	background-position-x: -110px;
+	cursor: pointer;
+}
+
+.icon span:nth-of-type(4) i {
+	background-position-x: -165px;
+	cursor: pointer;
+}
+section.footer .wrap .footer-mid {
+	height: 56px;
+	width: 680px;
+	margin:0 auto;
+	text-align: center;
+	
+}
+section.footer .wrap .footer-mid ul li{
+	display: block;
+	float: left;
+	/*background: bisque;*/	
+	
+}
+section.footer .wrap .footer-mid ul li a{
+	
+	font-size: 15px;
+	line-height: 54px;
+	text-decoration: none;
+	padding: 5px 30px ;
+	margin: 0 0;
+	color: black;
+	    /*list-style-type: disc;*/
+	
+}
+
+section.footer .wrap h6 {
+	text-align: center;
+	font-size: 17px;
+	line-height: 20px;
+	padding-bottom: 30px;
+	margin: 20px 0;
+
+}
+section.footer .wrap h6 code {
+	
+	color: #16A667;
+}

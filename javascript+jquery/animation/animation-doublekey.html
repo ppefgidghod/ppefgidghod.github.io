@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			body {
+				background: lightseagreen;
+			}
+			span {
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			var Ball = function(background,x,y,speed,direction) {
+				this.x = x;
+				this.y = y;
+				this.background = background;
+				this.speed = speed;
+				this.direction = direction;
+			this.draw = function(){
+				this.spanNode = document.createElement('span');
+				// this.spanNode = new spanNode();
+				document.body.appendChild(this.spanNode);
+				this.spanNode.style.background = background;
+				this.spanNode.style.left = x + 'px';
+				this.spanNode.style.top = y + 'px';
+			}
+			
+
+			this.moveRight = function(){
+				this.spanNode.style.left = parseInt(this.spanNode.style.left) + speed + 'px';
+				
+			}
+			this.moveBottom = function(){
+				this.spanNode.style.top = parseInt(this.spanNode.style.top) + speed + 'px';
+				
+			}
+			this.moveLeft = function(){
+				this.spanNode.style.left = parseInt(this.spanNode.style.left) + -(speed) + 'px';
+				
+			}
+			this.moveTop = function(){
+				this.spanNode.style.top = parseInt(this.spanNode.style.top) + -(speed) + 'px';
+				
+			}		
+			this.check = function(){
+				// console.log(parseInt(this.spanNode.style.left) );
+				if (parseInt(this.spanNode.style.left) >= 600){this.spanNode.style.left = 0 + 'px';}
+				else if (parseInt(this.spanNode.style.top) >= 600){this.spanNode.style.top = 0 + 'px';}
+				else if(parseInt(this.spanNode.style.left) ===0 ){this.spanNode.style.left = 600 + 'px';}
+				else if (parseInt(this.spanNode.style.top) === 0){this.spanNode.style.top = 600 + 'px';}
+			}
+			}
+
+			var whiteBall = new Ball('white',1,1,5,'right');
+			whiteBall.draw();
+			var yellowBall = new Ball('yellow',0,20,6,'left');
+			yellowBall.draw();
+
+			setInterval(function(){
+				whiteBall.check();
+				if(whiteBall.direction === 'right'){whiteBall.moveRight();}
+				else if (whiteBall.direction === 'left'){whiteBall.moveLeft();}
+				else if (whiteBall.direction === 'down'){whiteBall.moveBottom();}
+				else if (whiteBall.direction === 'up'){whiteBall.moveTop();}
+			 },20)
+			setInterval(function(){
+				yellowBall.check();
+				if(yellowBall.direction === 'right'){yellowBall.moveRight();}
+				else if (yellowBall.direction === 'left'){yellowBall.moveLeft();}
+				else if (yellowBall.direction === 'down'){yellowBall.moveBottom();}
+				else if (yellowBall.direction === 'up'){yellowBall.moveTop();}
+			 },20)
+
+			document.body.onkeydown = function(ev){
+				console.log(ev.keyCode);
+				switch (ev.keyCode){
+					case 37:
+					whiteBall.direction = 'left';
+						break;
+					case 38:
+					whiteBall.direction = 'up';
+						break;
+					case 39:
+					whiteBall.direction = 'right';
+						break;
+					case 40:
+					whiteBall.direction = 'down';
+						break;
+				}
+				switch (ev.keyCode){
+					case 65:
+					yellowBall.direction = 'left';
+						break;
+					case 87:
+					yellowBall.direction = 'up';
+						break;
+					case 68:
+					yellowBall.direction = 'right';
+						break;
+					case 83:
+					yellowBall.direction = 'down';
+						break;
+				}
+			}
+
+		</script>
+	</body>
+</html>
