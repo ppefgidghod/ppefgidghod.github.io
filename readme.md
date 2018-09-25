@@ -3,9 +3,10 @@
 柱形图：http://ppefgidghod.github.io/object/chart/index.html
 
 cultivation：
-            bootstrat: http://ppefgidghod.github.io/object/cultivation/bootstrat/bootZhongDi.html
 
-           原始css+html: http://ppefgidghod.github.io/object/cultivation/first/index.html
+bootstrat: http://ppefgidghod.github.io/object/cultivation/bootstrat/bootZhongDi.html
+
+原始css+html: http://ppefgidghod.github.io/object/cultivation/first/index.html
 
 炉石传说：http://ppefgidghod.github.io/object/hearthstone/hearthstone.html
 
