@@ -578,35 +578,50 @@ section.message .wrap .left .top {
 	margin-top: 25px;
 	overflow: hidden;
 	padding-left: 8px;
+	position: relative;
 }
-
+section.message .wrap .left .top>img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+section.message .wrap .left .top>img:nth-of-type(2),
+section.message .wrap .left .top>img:nth-of-type(3){
+display: none;
+}
 section.message .wrap .left .top span {
 	background: rgba(0, 0, 0, 0.41);
-	position: relative;
-	top: -50px;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	z-index: 1;
 	display: block;
 	line-height: 50px;
 	color: white;
+	width: 640px;
 }
 
 section.message .wrap .left .top span ul {
-	float: right;
+	/* float: right; */
+	display: inline-block;
+	position: absolute;
+	/* width: 33%; */
+	height: 100%;
+	top: 10%;
+	right: 0;
 }
 
 section.message .wrap .left .top span img {
-	display: inline;
+	display: inline-block;
 	margin-top: 5px;
 	width: 64px;
 	height: 34px;
 	text-align: center;
+	margin-right: 10px;
 }
 
-section.message .wrap .left .top span ul li {
-	float: left;
-	margin-left: 10px;
-}
 
-section.message .wrap .left .top span ul li:hover img {
+section.message .wrap .left .top span ul img:hover {
 	cursor: pointer;
 	border: 1px solid #ffde00;
 }
@@ -715,16 +730,16 @@ section.message .wrap .left .label i .news {
 	font-size: 10px;
 	margin: 0 0;
 	padding: 0 0;
-	float: left;
+	/* float: left; */
 	margin-top: 6px;
 }
 
-section.message .wrap .left .label i .news:hover {
+/* section.message .wrap .left .label i .news:hover {
 	cursor: pointer;
 	background: background: url(img/icon.png) no-repeat;
 	background-position-x: -74px;
 	background-position-y: -130px;
-}
+} */
 section.message .wrap .left .label:hover {
 	background: url(img/homenewsbg.png) repeat-y;
 	background-size: 100% auto;
@@ -1151,7 +1166,7 @@ section.message .wrap .right .top .dow span {
     background-position-y: 4px;
 }
 .contract ul li>.icon {
-	float: left;
+	/* float: left; */
 	display: inline-block;
 	width: 150px;
 	position: relative;
