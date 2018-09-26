@@ -72,8 +72,10 @@ body {
   display: none;
   z-index: 999;
 }
-#content #settlement p:first-of-type {
+#content #settlement p {
   text-align: center;
+}
+#content #settlement p:first-of-type {
   margin-top: 250px;
 }
 #content #settlement p:last-of-type {

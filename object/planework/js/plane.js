@@ -222,16 +222,47 @@ function moveNewBullet () {
 }
 
 
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires=" + d.toGMTString();
+	document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length)
+		}
+	}
+}
+
+// setCookie('name',0, 10);
+var maxscore;
+
+// var check = false;
 var gameOver = function () {
 	ourPlane.imgNode.src = ourPlane.boomSrc;
 	clearInterval(timeID);
 	settlementDIV.style.display = 'block';
-	document.querySelector('p#final-score').innerText = score;
+	document.querySelector('p#final-score').innerText = score;	
+		maxscore = Number(getCookie('name'));
+		if(score >= maxscore){
+			maxscore = score;
+			// check = true;
+			setCookie('name',maxscore, 10);
+		}
+	document.querySelector('p#max-score').innerText = maxscore;
+	
 }
-
+// if(check === true){
+	
+// 	check = false;
+// }
 var time = 0;
-
-
 var timeID;
 var start = function () {
 	startDiv.style.display = 'none';
@@ -271,3 +302,4 @@ mainDiv.onclick = function () {
 	clearTimeout(timeID);
 	suspendDiv.style.display = 'block';
 }
+
