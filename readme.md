@@ -28,8 +28,6 @@ css:
 
 放大-四宫格：https://ppefgidghod.github.io/css+transform/scalefour/zoomscale.html
 
-监控按钮：https://ppefgidghod.github.io/css+transform/jiankong.html
-
 右推菜单：https://ppefgidghod.github.io/css+transform/leftMenu.html
 
 图片放大镜：https://ppefgidghod.github.io/css+transform/Zoom.html
@@ -37,6 +35,8 @@ css:
 button:
 
 3D旋转：https://ppefgidghod.github.io/button+transform/transform.html
+
+幽灵按钮：https://ppefgidghod.github.io/css+transform/jiankong.html
 
 幽灵按钮：https://ppefgidghod.github.io/button+transform/radio-test.html
 

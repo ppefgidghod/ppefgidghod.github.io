@@ -1,0 +1,10 @@
+.row {
+    margin-bottom: 50px;
+}
+.list-group-item.row {
+    margin: 0 0;
+}
+
+.finished h5 {
+    text-decoration: line-through;
+}
