@@ -12,6 +12,10 @@ bootstrat: https://ppefgidghod.github.io/object/cultivation/bootstrat/bootZhongD
 
 抽奖大转盘：https://ppefgidghod.github.io/object/turntable/index.html
 
+ECharts:
+
+pie:https://ppefgidghod.github.io/Echarts/pie.html
+
 javascript:
 
 双键控制：https://ppefgidghod.github.io/javascript+jquery/animation/animation-doublekey.html

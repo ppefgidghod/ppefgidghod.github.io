@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts-en.common.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts-en.simple.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.common.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts-en.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.min.js"></script> -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.common.min.js"></script> -->
+    
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="chart"></div>
+    <style>
+        #chart{
+            width: 900px;
+            height: 900px;
+        }
+    </style>
+    <script>
+    var chart = document.getElementById("chart");
+    var mychart = echarts.init(chart);
+    var option = {
+        background:'#2c343c',
+        title: {
+            text: '饼图',
+            left: 'center',
+            top: 20,
+            textStyle: {
+            color: '#000'
+        }
+        },
+        visualMap:{
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+        }
+        },
+        series : [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '50%'],
+            data:[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:235, name:'视频广告'},
+                {value:254, name:'联盟广告'},
+                {value:360, name:'搜索引擎'}
+            ].sort(function (a, b) { return a.value - b.value; }),
+            roseType: 'radius',
+            label: {
+                normal: {
+                    textStyle: {
+                        color: 'rgba(255, 255, 255, 0.3)'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.3)'
+                    },
+                    smooth: 0.2,
+                    length: 10,
+                    length2: 20
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#800080',
+                    shadowBlur: 200,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            },
+
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+    }
+    // mychart.dispatchAction({
+    //     type:'showTip'
+    // })
+
+    mychart.setOption(option);
+
+    </script>
+</body>
+</html>
