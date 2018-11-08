@@ -14,7 +14,7 @@ bootstrat: https://ppefgidghod.github.io/object/cultivation/bootstrat/bootZhongD
 
 ECharts:
 
-pie:https://ppefgidghod.github.io/Echarts/pie.html
+pie：https://ppefgidghod.github.io/Echarts/pie.html
 
 javascript:
 
